@@ -101,6 +101,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\PartialAgent.cs" />
     <Compile Include="Model\PointsOfSales.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -134,12 +135,26 @@
     <Compile Include="Views\Pages\AdminPages\ManagerDataViewPage.xaml.cs">
       <DependentUpon>ManagerDataViewPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\ManagerPages\AgentDataActionPage.xaml.cs">
+      <DependentUpon>AgentDataActionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ManagerPages\AgentDataViewPage.xaml.cs">
+      <DependentUpon>AgentDataViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pages\ManagerPages\ManagerMainPage.xaml.cs">
       <DependentUpon>ManagerMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\ManagerWindows\ManagerWindow.xaml.cs">
       <DependentUpon>ManagerWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Pages\ManagerPages\AgentDataActionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\ManagerPages\AgentDataViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\AdminWindows\AdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

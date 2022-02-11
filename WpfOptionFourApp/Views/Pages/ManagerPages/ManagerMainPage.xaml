@@ -9,6 +9,8 @@
       Title="Окно менеджера">
 
     <Grid>
-        
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Список Агентов" Name="AgentsListBtn" Click="AgentsListBtn_Click" Width="200"></Button>
+        </StackPanel>
     </Grid>
 </Page>

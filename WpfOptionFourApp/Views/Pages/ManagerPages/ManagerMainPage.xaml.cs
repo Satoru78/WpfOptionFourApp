@@ -24,5 +24,10 @@ namespace WpfOptionFourApp.Views.Pages.ManagerPages
         {
             InitializeComponent();
         }
+
+        private void AgentsListBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AgentDataViewPage(new Model.Agent()));
+        }
     }
 }

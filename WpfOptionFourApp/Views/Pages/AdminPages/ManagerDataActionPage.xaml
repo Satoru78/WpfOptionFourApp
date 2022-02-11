@@ -11,13 +11,13 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
             <TextBlock Text="Фамилия: "/>
-            <TextBox Name="TextBoxLastName" Text="{Binding LastName}"/>
+            <TextBox Name="TextBoxLastName" Text="{Binding Manager.LastName}"/>
             <TextBlock Text="Имя: "/>
-            <TextBox Name="TextBoxFirstName" Text="{Binding FirstName}"/>
+            <TextBox Name="TextBoxFirstName" Text="{Binding Manager.FirstName}"/>
             <TextBlock Text="Номер телефона: "/>
-            <TextBox Name="TextBoxPhone" Text="{Binding Phone}"/>
+            <TextBox Name="TextBoxPhone" Text="{Binding Manager.Phone}"/>
             <TextBlock Text="Выберете роль:"></TextBlock>
-            <ComboBox ItemsSource="{Binding Roles}" SelectedItem="{Binding Manager.IDRole}" DisplayMemberPath="Title"></ComboBox>
+            <ComboBox ItemsSource="{Binding Roles}" SelectedItem="{Binding Manager.Role}" DisplayMemberPath="Title"></ComboBox>
 
             <Button Content="Сохранить данные" Margin="0,5" Name="ManagerDataSave" Click="ManagerDataSave_Click"></Button>
         </StackPanel>
