@@ -8,5 +8,6 @@
         Title="ManagerWindow" Height="450" Width="800">
     <Grid>
         <Frame Name="ManagerFrame" NavigationUIVisibility="Hidden"></Frame>
+        
     </Grid>
 </Window>

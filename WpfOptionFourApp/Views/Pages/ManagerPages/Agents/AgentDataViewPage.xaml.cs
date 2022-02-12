@@ -75,7 +75,46 @@ namespace WpfOptionFourApp.Views.Pages.ManagerPages
 
         private void AgentSearchTxb_SelectionChanged(object sender, RoutedEventArgs e)
         {
+            var data = Data.bd.Agent.Where(item => item.CompanyName.Contains(AgentSearchTxb.Text)
+            || item.Adress.Contains(AgentSearchTxb.Text) || item.INN.ToString().Contains(AgentSearchTxb.Text)
+            || item.KPP.ToString().Contains(AgentSearchTxb.Text) || item.FIODirector.Contains(AgentSearchTxb.Text)
+            || item.Phone.ToString().Contains(AgentSearchTxb.Text) || item.Email.Contains(AgentSearchTxb.Text)).ToList();
+            if (data.Any())
+            {
+                AgentData.Visibility = Visibility.Visible;
+                NoAgents.Visibility = Visibility.Collapsed;
+                AgentData.ItemsSource = data;
+            }
+            else
+            {
+                AgentData.Visibility = Visibility.Collapsed;
+                NoAgents.Visibility = Visibility.Visible;
+            }
 
+        }
+        private void SearchType(string type = "", string search = "")
+        {
+            var agents = Data.bd.Agent.ToList();
+            if (!string.IsNullOrEmpty(type) && !string.IsNullOrEmpty(type))
+            {
+                if (type == "ОАО")
+                {
+                   agents = agents.Where(item => item.AgentType.Title == "ОАО").ToList();
+                }
+                if (type == "Самозанятый")
+                {
+                    agents = agents.Where(item => item.AgentType.Title == "Самозанятый").ToList();
+                }
+                if (type == "ОО")
+                {
+                    agents = agents.Where(item => item.AgentType.Title == "ОО").ToList();
+                }           
+                if (type == "Все")
+                {
+                    agents = agents.ToList();
+                }
+            }
+            AgentData.ItemsSource = agents;
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -85,7 +124,12 @@ namespace WpfOptionFourApp.Views.Pages.ManagerPages
 
         private void AgentTypeCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            SearchType((AgentTypeCmb.SelectedItem as ComboBoxItem).Content.ToString(), AgentSearchTxb.Text);
+        }
 
+        private void AgentBackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

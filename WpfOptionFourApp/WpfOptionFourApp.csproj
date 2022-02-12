@@ -102,6 +102,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\PartialAgent.cs" />
+    <Compile Include="Model\PartialMaterials.cs" />
     <Compile Include="Model\PointsOfSales.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -135,23 +136,51 @@
     <Compile Include="Views\Pages\AdminPages\ManagerDataViewPage.xaml.cs">
       <DependentUpon>ManagerDataViewPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\ManagerPages\AgentDataActionPage.xaml.cs">
+    <Compile Include="Views\Pages\ManagerPages\Agents\AgentDataActionPage.xaml.cs">
       <DependentUpon>AgentDataActionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\ManagerPages\AgentDataViewPage.xaml.cs">
+    <Compile Include="Views\Pages\ManagerPages\Agents\AgentDataViewPage.xaml.cs">
       <DependentUpon>AgentDataViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\ManagerPages\ManagerMainPage.xaml.cs">
       <DependentUpon>ManagerMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Pages\ManagerPages\Material\MaterialDataActionPage.xaml.cs">
+      <DependentUpon>MaterialDataActionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ManagerPages\Material\MaterialDataViewPage.xaml.cs">
+      <DependentUpon>MaterialDataViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ManagerPages\Supplier\SupplierActionPage.xaml.cs">
+      <DependentUpon>SupplierActionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\ManagerPages\Supplier\SupplierDataPage.xaml.cs">
+      <DependentUpon>SupplierDataPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\ManagerWindows\ManagerWindow.xaml.cs">
       <DependentUpon>ManagerWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\Pages\ManagerPages\AgentDataActionPage.xaml">
+    <Page Include="Views\Pages\ManagerPages\Agents\AgentDataActionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\ManagerPages\AgentDataViewPage.xaml">
+    <Page Include="Views\Pages\ManagerPages\Agents\AgentDataViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\ManagerPages\Material\MaterialDataActionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\ManagerPages\Material\MaterialDataViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\ManagerPages\Supplier\SupplierActionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\ManagerPages\Supplier\SupplierDataPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

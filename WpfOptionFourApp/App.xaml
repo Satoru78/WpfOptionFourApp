@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:WpfOptionFourApp"
              StartupUri="Views/Windows/AvtorizationWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#B3F4E9"></Setter>
+            <Setter Property="Foreground" Value="#A5E887"></Setter>
+            <Setter Property="FontFamily" Value="Candara"></Setter>
+            
+        </Style>
     </Application.Resources>
 </Application>

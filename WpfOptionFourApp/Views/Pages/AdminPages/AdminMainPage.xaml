@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:WpfOptionFourApp.Views.Pages.AdminPages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminMainPage">
+      Title="Окно администратора">
+    
 
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">

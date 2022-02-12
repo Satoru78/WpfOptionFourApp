@@ -1,0 +1,61 @@
+﻿<Page x:Class="WpfOptionFourApp.Views.Pages.ManagerPages.SupplierDataPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfOptionFourApp.Views.Pages.ManagerPages"
+      Loaded="Page_Loaded"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Информация о потсавщиках">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Поиск:"></TextBlock>
+            <TextBox Name="SupplierSearchTxb" Width="250" SelectionChanged="SupplierSearchTxb_SelectionChanged"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Button Content="Назад" Name="SupplierBackBtn" Click="SupplierBackBtn_Click" Margin="10,0" Width="100"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0">
+            <TextBlock Text="Tип поставщика:"></TextBlock>
+            <ComboBox Name="SupplierTypeCmb" SelectionChanged="SupplierTypeCmb_SelectionChanged" Width="100">
+                <ComboBoxItem>OAO</ComboBoxItem>
+                <ComboBoxItem>Самозанятый</ComboBoxItem>
+                <ComboBoxItem>ООО</ComboBoxItem>
+                <ComboBoxItem>ЗАО</ComboBoxItem>
+                <ComboBoxItem>МКК</ComboBoxItem>
+                <ComboBoxItem>МФО</ComboBoxItem>
+                <ComboBoxItem>ПАО</ComboBoxItem>
+                <ComboBoxItem>Все</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <DataGrid Name="SupplierData"  AutoGenerateColumns="False"  ColumnWidth="*">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Title}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Тип поставщика" Binding="{Binding SuppliersType.Type}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="ИНН" Binding="{Binding INN}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Рейтинг качествa" Binding="{Binding QualityRating}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата начала работы с поставщиком" Binding="{Binding StartData}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Name="NoSuppliers" Visibility="Collapsed" Grid.Row="1">
+                <TextBlock Text="Список поставщиков пуст!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="SemiBold"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Добавить" Name="SupplierAddBtn" Click="SupplierAddBtn_Click" Width="200"></Button>
+                <Button Content="Редактировать" Name="SupplierEditBtn" Click="SupplierEditBtn_Click" Margin="10,0" Width="200"></Button>
+                <Button Content="Удалить" Name="SupplierDeleteBtn" Click="SupplierDeleteBtn_Click" Width="200"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

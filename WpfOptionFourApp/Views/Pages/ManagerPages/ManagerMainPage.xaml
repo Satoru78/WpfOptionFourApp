@@ -10,7 +10,11 @@
 
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Список Агентов" Name="AgentsListBtn" Click="AgentsListBtn_Click" Width="200"></Button>
+            <Button Content="Поставщики" Name="SupplierDataBtn" Click="SupplierDataBtn_Click"></Button>
+            <Button Content="Список Агентов" Name="AgentsListBtn" Click="AgentsListBtn_Click" Width="200" Margin="0,5"></Button>
+            <Button Content="Материалы" Name="MaterialBtn" Click="MaterialBtn_Click"></Button>
+            <Button Content="Заявки" Name="ApplicationBtn" Click="ApplicationBtn_Click" Margin="0,5"></Button>
+            
         </StackPanel>
     </Grid>
 </Page>

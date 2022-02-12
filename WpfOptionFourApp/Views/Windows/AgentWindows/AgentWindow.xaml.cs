@@ -23,6 +23,7 @@ namespace WpfOptionFourApp.Views.Windows.AgentWindows
         {
             InitializeComponent();
             
+            
         }
     }
 }

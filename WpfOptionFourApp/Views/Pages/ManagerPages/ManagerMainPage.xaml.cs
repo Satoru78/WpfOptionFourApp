@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfOptionFourApp.Views.Pages.ManagerPages.Material;
 
 namespace WpfOptionFourApp.Views.Pages.ManagerPages
 {
@@ -28,6 +29,21 @@ namespace WpfOptionFourApp.Views.Pages.ManagerPages
         private void AgentsListBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AgentDataViewPage(new Model.Agent()));
+        }
+
+        private void SupplierDataBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SupplierDataPage(new Model.Supplier()));
+        }
+
+        private void ApplicationBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MaterialBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MaterialDataViewPage(new Model.Materials()));
         }
     }
 }

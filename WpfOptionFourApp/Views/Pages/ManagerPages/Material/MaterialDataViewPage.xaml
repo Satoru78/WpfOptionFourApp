@@ -1,0 +1,72 @@
+﻿<Page x:Class="WpfOptionFourApp.Views.Pages.ManagerPages.Material.MaterialDataViewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfOptionFourApp.Views.Pages.ManagerPages.Material"
+      Loaded="Page_Loaded"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MaterialDataViewPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Поиск:"></TextBlock>
+            <TextBox Name="MaterialSearchTxb" Width="250" SelectionChanged="MaterialSearchTxb_SelectionChanged"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0">
+            <TextBlock Text="Tип материала:"></TextBlock>
+            <ComboBox Name="MaterialTypeCmb" SelectionChanged="MaterialTypeCmb_SelectionChanged" Width="100">
+                <ComboBoxItem>Резина</ComboBoxItem>
+                <ComboBoxItem>Краска</ComboBoxItem>
+                <ComboBoxItem>Силикон</ComboBoxItem>
+                <ComboBoxItem>Все</ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <Button Content="Назад" Name="MaterialBackBtn" Click="MaterialBackBtn_Click" Margin="10,0" Width="100"></Button>
+        </StackPanel>
+
+        <Grid Name="MaterialView" Grid.Row="1" Grid.Column="1">
+            <ListView Name="MaterialListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Width="150" Height="150" Source="{Binding GetPhoto}"></Image>
+
+                            <StackPanel Grid.Column="1" Margin="0,20">
+                                <Label Content="{Binding Title}" ContentStringFormat="Наименование: {0}"></Label>
+                                <Label Content="{Binding MaterialType.Title}" ContentStringFormat="Тип материала: {0}"></Label>
+                                <Label Content="{Binding Cost}" ContentStringFormat="Цена: {0}"></Label>
+                                <Label Content="{Binding QuantityStock}" ContentStringFormat="Количество на складе: {0}"></Label>
+                                <Label Content="{Binding Minimum}" ContentStringFormat="Минимальное количество: {0}"></Label>
+                                <Label Content="{Binding AmountPackage}" ContentStringFormat="Количестов в упаковке: {0}"></Label>
+                                <Label Content="{Binding Unit.Title}" ContentStringFormat="Еденица измерения: {0}"></Label>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+         <Grid Name="NoMaterials" Visibility="Collapsed" Grid.Row="1">
+                 <TextBlock Text="Материалы отсутствуют!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="SemiBold"/>
+         </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Content="Добавить" Name="MaterialAddBtn" Click="MaterialAddBtn_Click" Width="200"></Button>
+                <Button Content="Редактировать" Name="MaterialEditBtn" Click="MaterialEditBtn_Click" Margin="10,0" Width="200"></Button>
+                <Button Content="Удалить" Name="MaterialDeleteBtn" Click="MaterialDeleteBtn_Click" Width="200"></Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

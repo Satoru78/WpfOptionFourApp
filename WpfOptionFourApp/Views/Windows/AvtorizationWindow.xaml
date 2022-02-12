@@ -10,7 +10,7 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Логин:"></TextBlock>
-            <TextBox Name="TXBLogin" Width="300" Text="manager"></TextBox>
+            <TextBox Name="TXBLogin" Width="300"></TextBox>
             <TextBlock Text="Пароль:"></TextBlock>
             
             <StackPanel Name="HidePassword" Orientation="Horizontal">
